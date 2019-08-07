@@ -9,6 +9,7 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
+import os
 
 app = Flask(__name__)
 
@@ -45,4 +46,6 @@ def handle_message(event):
 
 
 if __name__ == "__main__":
-    app.run()
+    #app.run()
+    port = int(os.getenv("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
