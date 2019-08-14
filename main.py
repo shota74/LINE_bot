@@ -13,8 +13,10 @@ import os
 app = Flask(__name__)
 app.debug = False
 
-LINE_CHANNEL_ACCESS_TOKEN = os.getenv('LINE_CHANNEL_SECRET', None)
-LINE_CHANNEL_SECRET = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', None)
+LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
+#環境変数からLINE Channel Secretを設定
+LINE_CHANNEL_SECRET = os.environ["LINE_CHANNEL_SECRET"]
+
 
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
