@@ -11,6 +11,7 @@ from linebot.models import (
     MessageEvent, TextMessage, TemplateSendMessage, CarouselTemplate, CarouselColumn)
 
 app = Flask(__name__)
+app.debug = False
 
 LINE_CHANNEL_ACCESS_TOKEN = os.getenv('LINE_CHANNEL_SECRET', None)
 LINE_CHANNEL_SECRET = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', None)
